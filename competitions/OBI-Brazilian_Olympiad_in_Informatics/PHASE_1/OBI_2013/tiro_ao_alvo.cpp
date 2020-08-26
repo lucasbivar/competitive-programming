@@ -32,7 +32,7 @@ int main(){
 	for(int i=1;i<=n;i++)	
 	{
 		cin >> r[i];
-		r[i]=r[i]*r[i];
+		r[i] = r[i]*r[i];
 	}
 	long long int resp=0;
 	for(int i=1;i<=m;i++)	
