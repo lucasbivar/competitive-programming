@@ -20,7 +20,6 @@ t_edge edges[MAXM];
 
 // for the union find
 int father[MAXN];
-int weight[MAXN];
 
 // the tree
 t_edge mst[MAXM];
@@ -37,12 +36,7 @@ void join(int a, int b){
     a = find(a);
     b = find(b);
     
-    if(weight[a] < weight[b]) father[a] = b;
-    else if(weight[b] < weight[a]) father[b] = a;
-    else{
-        father[a] = b;
-        weight[b]++;
-    }
+    father[a] = b;
     
 }
 
