@@ -10,8 +10,6 @@
   </p>
 <hr>
  
-<hr> 
- 
 ## 🤓 Author 
 <table>
   <tr>
