@@ -9,6 +9,16 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="cpp" width="40" height="40"/>
   </p>
 <hr>
+
+## 📍 Algorithms
+ - 📦 [Repository](https://github.com/lucasbivar/competitive-programming/tree/master/algorithms)
+ 
+ ## 📍 Competitions
+ - 📦 [Repository](https://github.com/lucasbivar/competitive-programming/tree/master/competitions)
+ 
+ ## 📍 Materials
+ - 📦 [Repository](https://github.com/lucasbivar/competitive-programming/tree/master/materials)
+
  
 ## 🤓 Author 
 <table>
