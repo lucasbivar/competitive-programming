@@ -1,57 +1,78 @@
-#include <iostream>
+#include <bits/stdc++.h>
+#define MAX 105
 
 using namespace std;
 
-int tab[105][105];
-int movI[8] = {-1,-1,0,1,1,1,0,-1};
-int movY[8] = {0,1,1,1,0,-1,-1,-1};
-int N, M;
-char a;
+int matrix[MAX][MAX];
+
+void readData(int n, int m);
+void processData(int n, int m);
+void printData(int n, int m, int time);
 
 int main(){
-    cin.tie(NULL);
-    cout.tie(NULL);
-    ios::sync_with_stdio(0);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  ios::sync_with_stdio(0);
+  int n, m, time = 1;
 
-    int c = 1;
-
-    while(cin >> N >> M){
-        if(N == 0 && M == 0) break;
-
-        if(c != 1) cout << endl;
-        //Input
-        for(int i = 0; i < N; i++){
-            for(int j = 0; j < M; j++){
-                cin >> a;
-                if(a == '.') tab[i][j] = 0;
-                if(a == '*') tab[i][j] = -1;
-            }
-        }
-        //Solve
-        for(int i = 0; i < N; i++){
-            for(int j = 0; j < M; j++){
-                if(tab[i][j] == -1){
-                    for(int k = 0; k < 8; k++){
-                        int new_i = i + movI[k]; int new_j = j + movY[k];
-                        if(new_i < 0 || new_i > (N-1) || new_j < 0 || new_j > (M-1) || tab[new_i][new_j] == -1) continue;
-                        tab[new_i][new_j] += 1;
-                    }
-                }
-            }
-        }
-        //Output
-        cout << "Field #" << c++ <<":"<< endl;
-        for(int i = 0; i < N; i++){
-            for(int j = 0; j < M; j++){
-                if(tab[i][j] == -1){
-                    cout << '*';
-                }else{
-                    cout << tab[i][j];
-                }
-            }
-            cout << endl;
-        }
+  while(cin >> n >> m){
+    if(n+m == 0) break;
+    if(time!=1){
+      cout << endl;
     }
+    readData(n, m);
+    processData(n, m);
+    printData(n, m, time);
+    time++;
+  }
 
-    return 0;
+  return 0;
+}
+
+void readData(int n, int m){
+  char aux;
+  for(int i = 0; i < n; i++){
+    for(int j = 0; j < m; j++){
+      cin >> aux;
+      if(aux == '*'){
+        matrix[i][j] = -1;
+      }else{
+        matrix[i][j] = 0;
+      }
+    }
+  }
+}
+
+void processData(int n, int m){
+  int movI[8] = {-1 ,-1 ,-1, 0, 1,1,1,0};
+  int movJ[8] = {-1, 0, 1, 1, 1,0,-1,-1};
+
+  for(int i = 0; i < n; i++){
+    for(int j = 0; j < m; j++){
+      if(matrix[i][j] == -1){
+        for(int k = 0; k < 8; k++){
+          int newI = i+movI[k], newJ = j+movJ[k];
+          if(newI >= 0 && newI < n && newJ >= 0 && newJ < m){
+            if(matrix[newI][newJ] != -1){
+              matrix[newI][newJ] += 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+void printData(int n, int m, int time){
+  cout << "Field #" << time << ":" << endl;
+  for(int i = 0; i < n; i++){
+    for(int j = 0; j < m; j++){
+      if(matrix[i][j] == -1){
+        cout << '*';
+      }else{
+        cout << matrix[i][j];
+      }
+    }
+    cout << endl;
+  }
 }
