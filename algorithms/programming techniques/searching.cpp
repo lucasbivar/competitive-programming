@@ -11,6 +11,9 @@ typedef long long ll;
 typedef vector<int> vi;
 typedef pair<int, int> pii;
 
+//lower_bound -> returns the iterator to the first element greater or equal than the searched numberor an iterator to the end
+//upper_bound -> returns the iterator to the first element greater than searched number or an iterator to the end
+//equal_range -> returns the lower_bound and upper_bound
 
 int main(){
   cin.tie(NULL);
