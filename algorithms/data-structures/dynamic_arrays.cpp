@@ -42,6 +42,10 @@ int main(){
   // set a vector with size 10 and initial value 5
   vector<int> v_5(10, 5);
 
+
+  // size -> O(1)
+  cout << "Size: " << v.size() << endl;
+
   return 0;
 }
 
