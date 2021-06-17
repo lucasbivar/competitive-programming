@@ -23,3 +23,5 @@ int main(){
 
   return 0;
 }
+
+// g++ -Wall -std=c++17 algorithms/data-structures/stack.cpp -o main && ./main
