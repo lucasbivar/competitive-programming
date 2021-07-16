@@ -4,8 +4,6 @@
 #define sz size
 #define pb push_back
 #define mp make_pair
-#define REP(i,a,b) for (int i = a; i <= b; i++)
-#define SQ(a) (a)*(a)
 using namespace std;
 #define endl '\n'
 typedef long long ll;
@@ -21,4 +19,4 @@ int main(){
   return 0;
 }
 
-// g++ -Wall -std=c++17 problem.cpp -o main && ./main < in
+// g++ -Wall -std=c++17 resolutions/uri/prob.cpp -o main && ./main < in
