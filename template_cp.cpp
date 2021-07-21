@@ -10,6 +10,16 @@ typedef long long ll;
 typedef vector<int> vi;
 typedef pair<int, int> pii;
 
+template < class T >
+std::ostream& operator << (std::ostream& os, const std::vector<T>& v) {
+  int quantity = 0;
+  for (typename std::vector<T>::const_iterator ii = v.begin(); ii != v.end(); ++ii){
+    quantity == 0 ? os << *ii : os << " " << *ii;
+    quantity++; 
+  }
+  os << endl;
+  return os;
+}
 
 int main(){
   cin.tie(NULL);
